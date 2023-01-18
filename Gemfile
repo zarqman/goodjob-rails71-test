@@ -58,5 +58,8 @@ group :development do
   # gem "spring"
 
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
+
+  gem 'pry-rails'
 end
 
+gem "good_job", "~> 3.7"

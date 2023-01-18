@@ -16,14 +16,18 @@
 #
 default: &default
   adapter: postgresql
+  connect_timeout: 5
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  variables:
+    lock_timeout: 2s
+    statement_timeout: 5s
 
 development:
   <<: *default
-  database: goodjob_rails71_development
+  database: goodjob_rails71_dev
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
